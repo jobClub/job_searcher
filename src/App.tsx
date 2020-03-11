@@ -1,26 +1,74 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// Components
+import JobsList from './components/jobs_list'
+import Searcher from './components/searcher'
+import FilterByCountry from './components/filterByCountry'
+import FilterByCompany from './components/filterByCompany'
+class App extends React.Component {
+    state = {
+        term:'',
+        country: '',
+        company: ''
+    };
+    handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        this.setState({
+                [e.target.name]: e.target.value
+        });
+    };
+    resetFilters = () => {
+        this.setState({
+            country: '',
+            company: ''
+        })
+    }
+
+    render() {
+        return (
+            <div className="page">
+                <div className="header"></div>
+                <div className="header_cover"></div>
+                <div className="container">
+                    <Searcher
+                        onChange={this.handleChange}
+                        termValue={this.state.term} />
+                    <div className="content">
+                        <div className="filters">
+                            <div className="filters_title">
+                                <span>Filtros</span>
+                                <div>
+                                    <input type="button" onClick={this.resetFilters} value="Resear filtros" />
+                                </div>
+                            </div>
+                            <div className="filterParam">
+                                <div className="filterParam_title">
+                                    <span>Paises</span>
+                                </div>
+                                <div className="filterParam_content">
+                                    <FilterByCountry onChange={this.handleChange} selected={this.state.country} />
+                                </div>
+                            </div>
+                            <div className="filterParam">
+                                <div className="filterParam_title">
+                                    <span>Compañías</span>
+                                </div>
+                                <div className="filterParam_content">
+                                    <FilterByCompany onChange={this.handleChange} selected={this.state.company} />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="listJobs">
+                            <JobsList
+                                term={this.state.term}
+                                country={this.state.country}
+                                company={this.state.company} />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        )
+    }
 }
 
 export default App;

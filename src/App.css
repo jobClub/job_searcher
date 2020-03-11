@@ -1,38 +1,205 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Open Sans', sans-serif;
+  src: url(./assets/fonts/OpenSans-Regular.ttf);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: rgb(247, 248, 251);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  padding: 0 10%;
+}
+
+.input {
+  border: 1px solid #0B4F6C;
+  width: 80%;
+  height: 3em;
+  border-radius: 5px;
+  padding-right: 1em;
+  padding-left: 1em;
+  font-size: 18px;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.content {
   display: flex;
-  flex-direction: column;
+}
+
+.filters {
+  width: 340px;
+  margin-right: 16px;
+  background: rgb(255, 255, 255);
+  border-radius: 4px;
+  box-shadow: #bcbcbc 1px 1px 6px -1px
+}
+
+.filterParam {
+  padding: 0 16px;
+}
+
+.filterParam_title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.filters_title {
+  margin-bottom: 20px;
+  padding: 0 16px;
+  height: 50px;
+  background-color: rgb(238, 240, 247);
+  display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.filters_title span {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.filters_title div input {
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  font-weight: 600;
+  color: #515151;
+  cursor: pointer;
+}
+
+.filters_title div input:focus {
+  outline: none;
+}
+
+.filterParam_title {
+  margin: 20px 0;
+}
+
+.filterCountries,
+.filterCompanies {
+  margin-bottom: 10px;
+}
+
+.filterCountries input,
+.filterCompanies input {
+  margin-bottom: -3px;
+}
+
+.listJobs {
+  width: 100%;
+}
+
+.job {
+  height: 200px;
+  display: flex;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: #bcbcbc 1px 1px 6px -1px
+}
+
+.jobImg img{
+  height: 100%;
+  max-width: 200px;
+}
+
+.jobContent {
+  width: 100%;
+  padding-right: 24px;
+  padding-left: 24px;
+}
+
+.topContent {
+  display: flex;
+}
+
+.topContent div {
+  width: 100%;
+}
+
+.topContent span {
+  margin-top: 18px;
+  min-width: 200px;
+}
+
+/* Searcher */
+.search {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 4em 0;
+}
+
+
+/* Radio button */
+
+input[type="radio"] {
+  -webkit-appearance: none;
+  margin-left: 5px;
+  margin-right: 10px;
+  width: 18px;
+  height: 18px;
+  background: #eaf2ff;
+  border-radius: 50%;
+  transition: .2s;
+  cursor: pointer;
+}
+
+input[type="radio"]:hover {
+  box-shadow: inset 0 0 0 6px white, 0 0 0 5px #20BF55;
+}
+
+input[type="radio"]:checked {
+  background: #20BF55;
+  box-shadow: inset 0 0 0 2px white, 0 0 0 3px #20BF55;
+}
+
+input[type="radio"]:focus {
+  background: #20BF55;
+  box-shadow: inset 0 0 0 2px white, 0 0 0 3px #20BF55
+}
+
+.bottomContent {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.button {
+  display: block;
+  text-decoration : none;
+  background: #20BF55;
+  width: 100px;
+  height: 30px;
+  border-radius: 4px;
   color: white;
+  font-weight: 600;
+  text-align: center;
+  padding-top: 5px;
 }
 
-.App-link {
-  color: #61dafb;
+.header {
+  height: 200px;
+  width: 100%;
+  background-image: url(./assets/img/working.jpg);
+  background-size: cover ;
+  background-position: 100% 20%;
+  display: block;
+  position: relative
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header_cover {
+  height: 200px;
+  width: 100%;
+  background-color: #0B4F6C;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+
 }
