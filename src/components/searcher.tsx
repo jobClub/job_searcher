@@ -10,7 +10,7 @@ function Searcher(props: any) {
                     type="text"
                     name="term"
                     value={props.termValue}
-                    placeholder="Encuentra tu trabajo ideal"
+                    placeholder="Buscar..."
                     autoFocus
                     />
             </div>
