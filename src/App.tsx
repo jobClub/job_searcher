@@ -43,7 +43,7 @@ class App extends React.Component {
                             </div>
                             <div className="filterParam">
                                 <div className="filterParam_title">
-                                    <span>Paises</span>
+                                    <span>Pais</span>
                                 </div>
                                 <div className="filterParam_content">
                                     <FilterByCountry onChange={this.handleChange} selected={this.state.country} />
