@@ -36,7 +36,7 @@ class App extends React.Component {
                     <div className="content">
                         <div className="filters">
                             <div className="filters_title">
-                                <span>Filtros</span>
+                                <span>Filtros de búsqueda</span>
                                 <div>
                                     <input type="button" onClick={this.resetFilters} value="Resear filtros" />
                                 </div>
