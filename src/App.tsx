@@ -51,7 +51,7 @@ class App extends React.Component {
                             </div>
                             <div className="filterParam">
                                 <div className="filterParam_title">
-                                    <span>Compañía</span>
+                                    <span>Compañías</span>
                                 </div>
                                 <div className="filterParam_content">
                                     <FilterByCompany onChange={this.handleChange} selected={this.state.company} />
